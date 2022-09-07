@@ -15,7 +15,7 @@ export class CartService {
         private productsService: ProductsService,
     ) { }
 
-    async addToCard(productId: number, quantity: number, user: string): Promise<any> {
+    async addToCart(productId: number, quantity: number, user: string): Promise<any> {
         const cartItems = await this.cartRepository.find({ relations: ['item', 'user']});
         const product = await this.productsService.getOne(productId);
         const authUser = await this.userRepository.findOne( {
