@@ -11,7 +11,7 @@ export class OrderEntity {
     subTotal: number;
 
     @Column({default: false})
-    pedding: boolean;
+    pending: boolean;
 
     @OneToMany(type => ProductEntity, item => item.id)
     @JoinColumn()
